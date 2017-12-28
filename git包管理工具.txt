@@ -1,0 +1,47 @@
+1.配置config错误
+gitee域名出错，和路径错误
+2. git pull origin master出现错误
+解决：git pull origin master --allow-unrelated-histories
+3.git pull出现conflict错误有冲突
+git init 创建版本库，可追踪文件大的修改删除
+git add 添加文件 //可添加文件名，也可直接Git add .把文件修改添加到暂存区
+git commit -m "[]"添加说明
+git push
+git log//查看修改记录
+时光穿梭机
+git reset HEAD^ //退回到之前的版本，HEAD表示最新版本，HEAD~100之前100个的版本
+cat [文件名]//查看文件内容
+git reset[最新版本的commitid]//回到最后一次修改后的文件,版本号可不用写全
+git reflog//记录每一次命令
+git status //查看状态
+暂存区概念（stage）
+创建远程仓库时，自动 创建master分支，并且指针HEAd指向master，当你时光穿梭，起始是改变HEAD指针的指向
+git diff HEAD -- [wenjianming ] //查看工作区和版本库最新版本的区别
+//测试版本库与缓存区的区别 git跟踪修改，每次修改文件之后先add到缓存区，在commit到版本库，否则你修改的内容是无法到版本库中
+git checkout --[文件名] //回到最近一次 git add 或者 commit 注意--必须，撤销工作区修改（一种是文件自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+一种是文件已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。）
+git reset HEAD [文件名]//当你git commit之前发现错误，也可以使用此命令撤销暂存区的修改
+删除文件
+rm [文件名]，之后进行git status 查看状态，确认删除 git rm[文件名]，否则git checkout [文件名]回到修改前的状态
+git分支管理
+git checkout -b //创建并且换分支
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并分支
+git merge [文件名] //合并指定分支到当前分支，
+git log --graph //显示分支合并图，查看分支合并情况
+删除分支：git branch -d <name>
+分支管理
+git merge --no --ff -m"merge eith no--ff"//表示禁用Fast forward
+Bug分支
+git stash //当出现bug时，可以将工作区储藏起来，等到回复后继续工作
+git stash apply // 恢复工作区  git stash drop//删除内容
+git stash pop //恢复并删除
+//https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137602359178794d966923e5c4134bc8bf98dfb03aea3000 廖雪峰官网
+ git log --pretty=oneline  // 显示版本信息，
+git remote -v 查看远端仓库
+
+
+

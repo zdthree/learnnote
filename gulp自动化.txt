@@ -1,0 +1,35 @@
+ var gulp = require("gulp");  // 创建一个
+ var sass = require('gulp-sass')/;
+ gulp.task('copy_index',function(){
+	 return gulp.src('index.html').pipe(gulp.dest('zdthr')); //src 读取文件
+	 
+ })
+ gulp.task('img',function(){
+	 return gulp.src('img/*/*').pipe(gulp.dest('zdthr'));//复制img文件
+	 
+	 
+ })
+ gulp.task('data',function(){
+	 return gulp.src('xml/*.xml'，'json/secret-*.json0').pipe(gulp.dest('zdthr/data')) //pipe类似管道，dest将文件放在哪个位置
+ })；
+ 
+ gulp.task (参数，匿名函数);//添加任务
+ 
+ //任务依赖其他任务
+ gulp.task('build',['这里填写它依赖的任务名，以数组的形式'])
+ gulp.task('build',['img','copy_index','data'],function(){
+	 return 
+ })
+ 
+ //利用watch监视文件的变化
+ gulp.task('watch',function(){
+   gulp.watch('index.html',['copy_index']);
+   
+ })任务会一直执行//退出 ctr+c
+//插件扩展功能
+ 打开命令行，进入项目目录 npm install gulp-sass --save-dev
+ gulp.task("sass",function(){
+ return gulp.src('style/**/*.scss').pipe(sass()).pipe(gulp.dest(zds/css))//**/表示目录的下所有子目录，以及子目录的所有文件
+ })
+ 
+ 
